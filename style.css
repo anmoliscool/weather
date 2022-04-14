@@ -11,22 +11,22 @@ body{
     background-color: #f0f8ffaa;
     padding: 2em;
     border-radius: 30px;
-    border-color: black;
+    border-color: blue;
     width: 100%;
     max-width: 420px;
     margin: 5em;
+
 }
 .search{
     padding: 20px;
 }
-.file{
-    margin:5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size:50px;
-}
 #lbtn{
-     background-color: aquamarine;
-     border-radius: 30px;
-     border-color: black;
+    background-color: aquamarine;
+    border-radius: 30px;
+    border-color: black;
 }
-        
+.file{
+    margin: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:30px;
+}
