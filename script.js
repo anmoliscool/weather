@@ -39,7 +39,7 @@ function weather(info){
 
     city.innerText="Location: "+cityy;
     temp.innerHTML="Sky Details: "+op.description;
-    file.innerText=(tempp.temp-273.00)+"°C";       
+    file.innerText=(Math.round(tempp.temp-273.00).toFixed(2))+"°C";       
 
 
 
