@@ -25,6 +25,15 @@ body{
     border-radius: 30px;
     border-color: black;
 }
+#src{
+    background-color: #faebd7aa;
+    border-radius: 20px;
+}
+#btn{
+    background-color: aquamarine;
+    border-radius: 30px;
+    border-color: black;
+}
 .file{
     margin: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
