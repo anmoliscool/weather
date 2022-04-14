@@ -9,20 +9,24 @@
         body{
             display:"flex";
             justify-content: center;
+            align-items: center;
             align-content: center;
             background-color: black;
             background-image: url("https://source.unsplash.com/random/1400x900/?nature");
         }
         .kit{
-            display:"flex";
-            align-items: center;
-            justify-content: center;
             background-color: #f0f8ffaa;
-            padding: 50px;
+            padding: 2em;
             border-radius: 30px;
             width: 100%;
             max-width: 420px;
+            margin: 1em;
 
+        }
+        #lbtn{
+            background-color: aquamarine;
+            border-radius: 30px;
+            border-color: black;
         }
         
     </style>
@@ -30,7 +34,6 @@
 <body>
     <div class="kit">
         <div class="search">
-            <input type="text" id="text" value="India">
             <button id="lbtn">Get Location</button>
         </div>
         <div class="city">India</div>
