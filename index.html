@@ -5,15 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather | Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="search">
-        <input type="search">
+    <div class="kit">
+        <div class="search">
+            <input type="text" id="text" value="India">
+            <button id="lbtn">Get Location</button>
+        </div>
+        <div class="city">India</div>
+        <div class="weather"><h1>27°C</h1></div>
     </div>
-    <div class="city"></div>
-    <div class="weather"></div>
     
 
     
 </body>
+<script>
+    kit=document.querySelector(".kit");
+    search=kit.querySelector(".search");
+    city=kit.querySelector(".city");
+    temp=kit.querySelector(".weather");
+    input=search.querySelector("input")
+    /*btn=search.querySelector("button");*/
+    lbtn=document.getElementById("lbtn");
+    function val(city){
+        let api=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e8d7403e9859949aaa3de26ea7101655`;
+        fetch(api).then(response => response.json()).then(result => weather(result));
+    }   
+    lbtn.addEventListener("click",()=>{
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(onSuccess,onError);
+
+        }
+        else{
+            console.log("Geolocation not supported");
+        }
+    });
+    function onSuccess(position){
+        const{latitude,longitude}=position.coords;
+        let api=`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=e8d7403e9859949aaa3de26ea7101655`;
+        fetch(api).then(response => response.json()).then(result => weather(result));
+    }
+
+
+    function onError(error){
+        console.log(error);
+    }
+
+
+
+    function weather(info){
+        const cityy=info.name;
+        const tempp=info.weather[0];
+        city.innerText=cityy;
+        temp.innerText=tempp;
+
+
+    }
+</script>
 </html>
