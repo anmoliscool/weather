@@ -3,13 +3,9 @@ search=kit.querySelector(".search");
 city=kit.querySelector(".city");
 temp=kit.querySelector(".weather");
 input=search.querySelector("input")
-/*btn=search.querySelector("button");*/
+btn=document.getElementById("btn");
 lbtn=document.getElementById("lbtn");
-file=kit.querySelector(".file");
-function val(city){
-    let api=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e8d7403e9859949aaa3de26ea7101655`;
-    fetch(api).then(response => response.json()).then(result => weather(result));
-}   
+file=kit.querySelector(".file");  
 lbtn.addEventListener("click",()=>{
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(onSuccess,onError);
@@ -19,6 +15,15 @@ lbtn.addEventListener("click",()=>{
         console.log("Geolocation not supported");
     }
 });
+btn.addEventListener("click",()=>{
+    city=document.getElementById("src").value;
+    let api=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e8d7403e9859949aaa3de26ea7101655`;
+    fetch(api).then(response => response.json()).then(result => weather(result));
+    city.innerText="Location: "+city;
+
+});
+
+
 function onSuccess(position){
     const{latitude,longitude}=position.coords;
     let api=`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=e8d7403e9859949aaa3de26ea7101655`;
