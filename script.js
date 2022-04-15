@@ -42,10 +42,7 @@ function weather(info){
     const tempp=info.main;
     const op=info.weather[0];
 
-    city.innerText="Location: "+cityy;
-    temp.innerHTML="Sky Details: "+op.description;
+    city.innerText=cityy;
+    temp.innerHTML=op.description;
     file.innerText=(Math.round(tempp.temp-273.00).toFixed(2))+"°C";       
-
-
-
 }
